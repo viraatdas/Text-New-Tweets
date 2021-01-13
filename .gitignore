@@ -1,5 +1,5 @@
 config.py
-# phone_numbers.txt
+phone_numbers.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
