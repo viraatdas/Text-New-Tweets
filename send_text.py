@@ -14,8 +14,8 @@ twitter_account = twitter_api(API_KEY, API_KEY_SECRET, ACCESS_TOKEN, ACCESS_TOKE
 tweet_text, time_in_seconds = twitter_account.get_latest_tweet()
 
 while True:
-    if twitter_account.set_tweet_time_if_latest(time_in_seconds):
-        for phone_number in phone_numbers:
-            text_smtp.send_message(phone_number, tweet_text)
-    print("Successfully sent updated tweet")
+    # if twitter_account.set_tweet_time_if_latest(time_in_seconds):
+    for phone_number in phone_numbers:
+        text_smtp.send_message(phone_number, tweet_text)
+        print(f"Successfully sent updated tweet to {phone_number}")
     time.sleep(10)

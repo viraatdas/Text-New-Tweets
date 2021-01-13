@@ -24,9 +24,11 @@ class smtp_text:
 
     def send_message(self, phone, message):
         mime_msg = MIMEText(message.encode('utf-8'), _charset='utf-8')
+        print(mime_msg.as_string())
         for gateway in self.SmsGateways:
             destination = f"{phone}@{gateway}"
             try:
                 self.server.sendmail(self.GMAIL_EMAIL, destination, mime_msg.as_string())
+                print("HERE")
             except Exception as e:
                 continue
