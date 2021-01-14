@@ -179,7 +179,7 @@ README template based on [othneildrew](https://github.com/othneildrew/Best-READM
 [stars-url]: https://github.com/viraatdas/Text-New-Tweets/stargazers
 [issues-shield]: https://img.shields.io/github/issues/viraatdas/Text-New-Tweets.svg?style=for-the-badge
 [issues-url]: https://github.com/viraatdas/Text-New-Tweets/issues
-[license-shield]: https://img.shields.io/github/license/viraatdas/Text-New-Tweets.svg?style=MIT
+[license-shield]: https://img.shields.io/github/license/viraatdas/Text-New-Tweets.svg?style=for-the-badge
 [license-url]: https://github.com/viraatdas/Text-New-Tweets/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
