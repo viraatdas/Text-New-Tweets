@@ -7,3 +7,9 @@ API_KEY=""
 API_KEY_SECRET=""
 ACCESS_TOKEN=""
 ACCESS_TOKEN_SECRET=""
+
+# Phone numbers
+PHONE_NUMBERS = {
+    "1234567890" : "John Doe", 
+    "0987654321" : "Silly Billy"    
+}

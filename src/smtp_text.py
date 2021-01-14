@@ -1,6 +1,8 @@
 import smtplib
 import email
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.message import EmailMessage
 
 
 class smtp_text:
@@ -14,21 +16,25 @@ class smtp_text:
 
         self.SmsGateways = [
                             'tmomail.net',             # tmobile
-                            'mms.att.net',             # at&t
-                            'vtext.com',               # verizon
-                            'pm.sprint.com',           # sprint
-                            'sms.mycricket.com',       # cricket 
-                            'vmobl.com',               # virgin mobile US
-                            'sms.myboostmobile.com'    # boost mobile
+                            # 'mms.att.net',             # at&t
+                            # 'vtext.com',               # verizon
+                            # 'pm.sprint.com',             # sprint
+                            # 'sms.mycricket.com',       # cricket 
+                            # 'vmobl.com',               # virgin mobile US
+                            # 'myboostmobile.com'    # boost mobile
                             ]
 
     def send_message(self, phone, message):
-        mime_msg = MIMEText(message.encode('utf-8'), _charset='utf-8')
-        print(mime_msg.as_string())
+        
+
         for gateway in self.SmsGateways:
             destination = f"{phone}@{gateway}"
+            message+="\n Contact Viraat if you are receiving duplicate messages."
+            mimed_msg = f"From: {self.GMAIL_EMAIL}\r\nTo: {destination}\r\nSubject: \r\n\r\n{message}"
+
             try:
-                self.server.sendmail(self.GMAIL_EMAIL, destination, mime_msg.as_string())
-                print("HERE")
+                self.server.sendmail(self.GMAIL_EMAIL, destination, mimed_msg)
+
             except Exception as e:
+                print(e)
                 continue

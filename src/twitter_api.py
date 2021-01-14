@@ -6,8 +6,12 @@ class twitter_api:
                         consumer_secret=API_KEY_SECRET,
                         access_token_key=ACCESS_TOKEN,
                         access_token_secret=ACCESS_TOKEN_SECRET)
+
+        self.twitter_account.tweet_mode = 'extended'
         self.last_tweet_time = None
     
+    def get_api(self):
+        return self.twitter_account
     """
     Returns True if a new time has been set - also indicates that 
     a new notification should be sent.
@@ -38,6 +42,6 @@ class twitter_api:
         latest_tweet = latest_tweet[0]
 
         time_in_seconds = int(latest_tweet.created_at_in_seconds)  
-        tweet_text = latest_tweet.text
+        tweet_text = latest_tweet.full_text
 
         return tweet_text, time_in_seconds
