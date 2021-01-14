@@ -128,9 +128,12 @@ Pip should be fine as well. The only package to be installed is `python-twitter`
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-`python3 send_text.py`
+`python3 send_text.py` 
 
+The code runs every 15 minutes. If there is a new tweet sent, it sends that out otherwise waits 15 minutes again. 
 
+#### Deploy - Example
+I decided to use a free EC2 instance. Using the [screen](https://linuxize.com/post/how-to-use-linux-screen/) command, I simply let the code run in perpetuity. 
 
 
 <!-- ROADMAP -->
@@ -162,12 +165,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Viraat - [@therealviraat](https://twitter.com/therealviraat) - viraat.laldas@gmail.com
-
-Project Link: [https://github.com/viraatdas/Text-New-Tweets](https://github.com/viraatdas/Text-New-Tweets)
-
-
-
-
 
 README template based on [othneildrew](https://github.com/othneildrew/Best-README-Template)
 
