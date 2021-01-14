@@ -22,5 +22,5 @@ while True:
 
     for phone_number in PHONE_NUMBERS:
         text_smtp.send_message(phone_number, tweet_text)
-        print(f"Successfully sent updated tweet to {phone_number}")
+        print(f"Successfully sent updated tweet to {phone_number} - {PHONE_NUMBERS[phone_number]}")
     time.sleep(10)
