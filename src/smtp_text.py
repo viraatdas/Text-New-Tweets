@@ -15,19 +15,21 @@ class smtp_text:
         self.server.login(self.GMAIL_EMAIL, GMAIL_PASSWORD)
 
         self.SmsGateways = [
-                            'tmomail.net',              # tmobile
-                            'mms.att.net',              # at&t
-                            'vtext.com',                # verizon
-                            'pm.sprint.com',            # sprint
-                            'sms.mycricket.com'         # cricket 
+                            'tmomail.net',                  # tmobile
+                            'mms.att.net',                  # at&t
+                            'vtext.com',                    # verizon
+                            'pm.sprint.com',                # sprint
+                            'sms.mycricket.com',            # cricket 
+                            'sms.myboostmobile.com'         # boost
                             ]
 
     def send_message(self, phone, message):
+        # Due to acquisiations
         message+="\n Contact Viraat if you are receiving duplicate messages."
         for gateway in self.SmsGateways:
             destination = f"{phone}@{gateway}"
             
-            mimed_msg = f"From: {self.GMAIL_EMAIL}\r\nTo: {destination}\r\nSubject: \r\n\r\n{message}"
+            mimed_msg = f"From: {self.GMAIL_EMAIL}\r\nTo: {destination}\r\nSubject: \r\n\r\n{message}{destination}"
 
             try:
                 self.server.sendmail(self.GMAIL_EMAIL, destination, mimed_msg)

@@ -10,8 +10,7 @@ class twitter_api:
         self.twitter_account.tweet_mode = 'extended'
         self.last_tweet_time = None
     
-    def get_api(self):
-        return self.twitter_account
+
     """
     Returns True if a new time has been set - also indicates that 
     a new notification should be sent.
