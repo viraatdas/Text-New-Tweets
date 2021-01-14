@@ -14,11 +14,11 @@ a = twitter_account.get_api()
 tweet_text, time_in_seconds = twitter_account.get_latest_tweet()
 
 
-# while True:
+while True:
     # if twitter_account.set_tweet_time_if_latest(time_in_seconds):
-for i, phone_number in enumerate(phone_numbers):
-    if not phone_number:
-        continue
-    text_smtp.send_message(phone_number, tweet_text)
-    print(f"Successfully sent updated tweet to {phone_number}")
-    # time.sleep(10)
+    for i, phone_number in enumerate(phone_numbers):
+        if not phone_number:
+            continue
+        text_smtp.send_message(phone_number, tweet_text)
+        print(f"Successfully sent updated tweet to {phone_number}")
+    time.sleep(10)
