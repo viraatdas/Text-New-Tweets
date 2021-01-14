@@ -16,12 +16,12 @@ class smtp_text:
 
         self.SmsGateways = [
                             'tmomail.net',             # tmobile
-                            # 'mms.att.net',             # at&t
-                            # 'vtext.com',               # verizon
-                            # 'pm.sprint.com',             # sprint
-                            # 'sms.mycricket.com',       # cricket 
-                            # 'vmobl.com',               # virgin mobile US
-                            # 'myboostmobile.com'    # boost mobile
+                            'mms.att.net',             # at&t
+                            'vtext.com',               # verizon
+                            'pm.sprint.com',             # sprint
+                            'sms.mycricket.com',       # cricket 
+                            'vmobl.com',               # virgin mobile US
+                            'myboostmobile.com'    # boost mobile
                             ]
 
     def send_message(self, phone, message):
