@@ -130,6 +130,8 @@ Pip should be fine as well. The only package to be installed is `python-twitter`
 
 `python3 send_text.py` 
 
+`config.py` can be edited while the code is running. If you look at `send_text.py`, I reload `config` every time there is a call to the Twitter API. Hopefully this makes it easy to add or remove phone numbers. 
+
 The code runs every 15 minutes. If there is a new tweet sent, it sends that out otherwise waits 15 minutes again. 
 
 #### Deploy - Example
