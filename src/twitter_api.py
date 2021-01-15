@@ -2,14 +2,25 @@ import twitter
 
 class twitter_api:
     def __init__(self, API_KEY, API_KEY_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET):
-        self.twitter_account = twitter.Api(consumer_key=API_KEY,
-                        consumer_secret=API_KEY_SECRET,
-                        access_token_key=ACCESS_TOKEN,
-                        access_token_secret=ACCESS_TOKEN_SECRET)
+        self.API_KEY = API_KEY
+        self.API_KEY_SECRET = API_KEY_SECRET
+        self.ACCESS_TOKEN = ACCESS_TOKEN
+        self.ACCESS_TOKEN_SECRET = ACCESS_TOKEN_SECRET
+
+        self.twitter_account = twitter.Api(consumer_key=self.API_KEY,
+                        consumer_secret=self.API_KEY_SECRET,
+                        access_token_key=self.ACCESS_TOKEN,
+                        access_token_secret=self.ACCESS_TOKEN_SECRET)
 
         self.twitter_account.tweet_mode = 'extended'
         self.last_tweet_time = None
     
+    def reconnect(self):
+        self.twitter_account = twitter.Api(consumer_key=self.API_KEY,
+                        consumer_secret=self.API_KEY_SECRET,
+                        access_token_key=self.ACCESS_TOKEN,
+                        access_token_secret=self.ACCESS_TOKEN_SECRET)
+        self.twitter_account.tweet_mode = 'extended'
 
     """
     Returns True if a new time has been set - also indicates that 
