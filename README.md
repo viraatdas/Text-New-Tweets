@@ -41,7 +41,7 @@
 </h3>
 
   <p align="center">
-    Do your friends not have a Twitter but you still want to share them your hilarious tweets? Look no further! Just set this docker image as a daemon and they'll always be in the loop whenever you tweet!
+    Do your friends not have a Twitter but you still want to share them your hilarious tweets? Look no further! This will automatically send the people you added the tweet as a text message whenever you tweet!
     <br />
     <br />
     <a href="https://github.com/viraatdas/Text-New-Tweets/issues">Report Bug</a>
