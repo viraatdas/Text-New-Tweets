@@ -24,12 +24,12 @@ class smtp_text:
                             ]
 
     def send_message(self, phone, message):
-        # Due to acquisiations
+        # Due to company acquisitions, multiple gateways for a single number might work
         message+="\n Contact Viraat if you are receiving duplicate messages."
         for gateway in self.SmsGateways:
             destination = f"{phone}@{gateway}"
             
-            mimed_msg = f"From: {self.GMAIL_EMAIL}\r\nTo: {destination}\r\nSubject: \r\n\r\n{message}{destination}"
+            mimed_msg = f"From: {self.GMAIL_EMAIL}\r\nTo: {destination}\r\nSubject: \r\n\r\n{message}"
 
             try:
                 self.server.sendmail(self.GMAIL_EMAIL, destination, mimed_msg)
