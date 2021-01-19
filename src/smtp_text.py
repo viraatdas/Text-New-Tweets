@@ -25,7 +25,7 @@ class smtp_text:
 
     def send_message(self, phone, message):
         # Due to company acquisitions, multiple gateways for a single number might work
-        message+="\n\nContact Viraat if you are receiving duplicate messages."
+        message += "\n\nContact Viraat if you are receiving duplicate messages."
         for gateway in self.SmsGateways:
             destination = f"{phone}@{gateway}"
             
