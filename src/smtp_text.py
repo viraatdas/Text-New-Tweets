@@ -4,7 +4,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.message import EmailMessage
 
-
 class smtp_text:
     def __init__(self, GMAIL_EMAIL, GMAIL_PASSWORD):
         self.GMAIL_EMAIL = GMAIL_EMAIL
