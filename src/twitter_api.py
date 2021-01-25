@@ -7,12 +7,8 @@ class twitter_api:
         self.ACCESS_TOKEN = ACCESS_TOKEN
         self.ACCESS_TOKEN_SECRET = ACCESS_TOKEN_SECRET
 
-        self.twitter_account = twitter.Api(consumer_key=self.API_KEY,
-                        consumer_secret=self.API_KEY_SECRET,
-                        access_token_key=self.ACCESS_TOKEN,
-                        access_token_secret=self.ACCESS_TOKEN_SECRET)
-
-        self.twitter_account.tweet_mode = 'extended'
+        
+        self.twitter_account = None
         self.last_tweet_time = None
     
     def reconnect(self):
