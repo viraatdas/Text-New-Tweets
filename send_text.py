@@ -8,10 +8,10 @@ import importlib
 text_smtp = smtp_text(GMAIL_EMAIL, GMAIL_PASSWORD)
 twitter_account = twitter_api(API_KEY, API_KEY_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
-tweet_text, time_in_seconds = twitter_account.get_latest_tweet()
 
 while True:
     twitter_account.reconnect()
+    tweet_text, time_in_seconds = twitter_account.get_latest_tweet()
     if twitter_account.set_tweet_time_if_latest(time_in_seconds):
         importlib.reload(config)
         from config import PHONE_NUMBERS
