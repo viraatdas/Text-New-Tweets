@@ -13,7 +13,7 @@ while True:
     twitter_account.reconnect()
     text_smtp.reconnect()
     
-    tweet_text, time_in_seconds = twitter_account.get_latest_tweet()
+    tweet_text, time_in_seconds, latest_tweet = twitter_account.get_latest_tweet()
     if twitter_account.set_tweet_time_if_latest(time_in_seconds):
         importlib.reload(config)
         from config import PHONE_NUMBERS

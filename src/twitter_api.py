@@ -44,10 +44,11 @@ class twitter_api:
     Returns latest tweet and the time it was created
     """
     def get_latest_tweet(self):
-        latest_tweet = self.twitter_account.GetUserTimeline(count=1)
-        latest_tweet = latest_tweet[0]
-
+        latest_tweet_1 = self.twitter_account.GetUserTimeline(count=1)
+        
+        latest_tweet = latest_tweet_1[0]
+        
         time_in_seconds = int(latest_tweet.created_at_in_seconds)  
         tweet_text = latest_tweet.full_text
-
-        return tweet_text, time_in_seconds
+        
+        return tweet_text, time_in_seconds, latest_tweet_1
