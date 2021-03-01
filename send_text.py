@@ -12,7 +12,7 @@ twitter_account = twitter_api(API_KEY, API_KEY_SECRET, ACCESS_TOKEN, ACCESS_TOKE
 while True:
     twitter_account.reconnect()
     text_smtp.reconnect()
-    
+    a = twitter_account.get_account()
     tweet_text, time_in_seconds, latest_tweet = twitter_account.get_latest_tweet()
     if tweet_text.rstrip()[-1] == "*":
         print("New tweet requested to not be sent")
