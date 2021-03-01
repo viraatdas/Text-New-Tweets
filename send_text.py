@@ -14,6 +14,9 @@ while True:
     text_smtp.reconnect()
     
     tweet_text, time_in_seconds, latest_tweet = twitter_account.get_latest_tweet()
+    if tweet_text.rstrip()[-1] == "*":
+        print("New tweet requested to not be sent")
+        continue
     if twitter_account.set_tweet_time_if_latest(time_in_seconds):
         importlib.reload(config)
         from config import PHONE_NUMBERS
@@ -23,4 +26,4 @@ while True:
             print(f"Successfully sent updated tweet to {phone_number} - {PHONE_NUMBERS[phone_number]}")
 
     # Wait 15 minutes and then recheck
-    time.sleep(900) 
+    time.sleep(60) 

@@ -26,15 +26,16 @@ class smtp_text:
         self.server.login(self.GMAIL_EMAIL, self.GMAIL_PASSWORD)
 
     def send_message(self, phone, message):
-        # Due to company acquisitions, multiple gateways for a single number might work
         message += "\n\nTweet powered by VIRU coins"
+
+        # Due to company acquisitions, multiple gateways for a single number might work
         for gateway in self.SmsGateways:
             destination = f"{phone}@{gateway}"
             
-            mimed_msg = f"From: {self.GMAIL_EMAIL}\r\nTo: {destination}\r\nSubject: \r\n\r\n{message}"
-
+            msg_with_header = f"From: {self.GMAIL_EMAIL}\r\nTo: {destination}\r\nSubject: \r\n\r\n{message}"
+            mimed_msg = MIMEText(msg_with_header.encode('utf-8'), _charset='utf-8')
             try:
-                self.server.sendmail(self.GMAIL_EMAIL, destination, mimed_msg)
+                self.server.sendmail(self.GMAIL_EMAIL, destination, mimed_msg.as_string())
             except Exception as e:
                 print(e)
                 continue
