@@ -18,10 +18,6 @@ class twitter_api:
                         access_token_key=self.ACCESS_TOKEN,
                         access_token_secret=self.ACCESS_TOKEN_SECRET)
         self.twitter_account.tweet_mode = 'extended'
-    
-    def get_account(self):
-        return self.twitter_account
-
 
     """
     Returns True if a new time has been set - also indicates that 
