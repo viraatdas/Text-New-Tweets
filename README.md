@@ -134,6 +134,8 @@ Pip should be fine as well. The only package to be installed is `python-twitter`
 
 The code runs every 15 minutes. If there is a new tweet sent, it sends that out otherwise waits 15 minutes again. 
 
+If the tweet ends with a "*", then it won't be texted to the users. 
+
 #### Deploy - Example
 I decided to use a free EC2 instance. Using the [screen](https://linuxize.com/post/how-to-use-linux-screen/) command, I simply let the code run in perpetuity. 
 
