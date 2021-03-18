@@ -6,7 +6,8 @@ import time
 import importlib
 
 text_smtp = smtp_text(GMAIL_EMAIL, GMAIL_PASSWORD)
-twitter_account = twitter_api(API_KEY, API_KEY_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+twitter_account = twitter_api(
+    API_KEY, API_KEY_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 
 while True:
@@ -23,7 +24,8 @@ while True:
 
         for phone_number in PHONE_NUMBERS:
             text_smtp.send_message(phone_number, tweet_text)
-            print(f"Successfully sent updated tweet to {phone_number} - {PHONE_NUMBERS[phone_number]}")
+            print(
+                f"Successfully sent updated tweet to {phone_number} - {PHONE_NUMBERS[phone_number]}")
 
     # Wait 15 minutes and then recheck
-    time.sleep(60) 
+    time.sleep(60)
